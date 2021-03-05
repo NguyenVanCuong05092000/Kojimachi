@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
@@ -29,21 +29,103 @@
                 android:id="@+id/imgLogo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_20"
+                android:src="@drawable/logo"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                android:src="@drawable/logo"
                 app:layout_constraintTop_toBottomOf="@+id/imgLogoText" />
+
+            <TextView
+                android:textColor="@color/colorTextTitle"
+                android:id="@+id/tvTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_10"
+                android:text="@string/lbl_reservation_management"
+                android:textSize="@dimen/text_size_18"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/imgLogoText"
+                app:layout_constraintTop_toBottomOf="@+id/imgLogo" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/clEdtLoginID"
+                app:layout_constraintTop_toBottomOf="@+id/tvTitle"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="@dimen/margin_20"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tvLoginID"
+                    android:text="@string/lbl_login_id"
+                    android:textColor="@color/colorTextTitle"
+                    android:textSize="@dimen/text_size_16"
+                    android:textStyle="bold"/>
+                <EditText
+                    android:gravity="center"
+                    android:layout_marginTop="@dimen/margin_10"
+                    android:id="@+id/edtLoginID"
+                    android:padding="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_edt_login"/>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/clEdtLoginPass"
+                app:layout_constraintTop_toBottomOf="@+id/clEdtLoginID"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="@dimen/margin_10"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tvLoginPass"
+                    android:text="@string/lbl_login_pass"
+                    android:textColor="@color/colorTextTitle"
+                    android:textSize="@dimen/text_size_16"
+                    android:textStyle="bold"/>
+                <EditText
+                    android:gravity="center"
+                    android:inputType="textPassword"
+                    android:layout_marginTop="@dimen/margin_10"
+                    android:id="@+id/edtLoginPass"
+                    android:padding="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_edt_login"/>
+            </LinearLayout>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/clEdtLoginPass"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:background="@drawable/bg_btn_login"
+                android:layout_marginTop="@dimen/margin_20"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:id="@+id/btnLogin"
+                android:text="@string/lbl_login"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/tvTitle"
-                app:layout_constraintTop_toBottomOf="@+id/imgLogo"
-                app:layout_constraintStart_toStartOf="@+id/imgLogoText"
-                android:textStyle="bold"
-                android:text="@string/lbl_reservation_management"
-                android:textSize="@dimen/text_size_18"/>
-
+                android:text="@string/lbl_forget_your_password"
+                app:layout_constraintTop_toBottomOf="@+id/btnLogin"
+                android:layout_marginTop="@dimen/margin_20"
+                android:textSize="@dimen/text_size_13"
+                android:textColor="@color/colorEdtLogin"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
